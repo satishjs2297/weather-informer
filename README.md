@@ -5,7 +5,7 @@
 
   - It takes city names as inputs with common separated values
   - It shows the weather information widget for each city.
-  - Enabled i18n and default to English and french is also enabled (lang=fn)
+  - Enabled i18n and default to English and french is also enabled (lang=ja)
 
 ## Getting Started
 
