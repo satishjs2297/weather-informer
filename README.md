@@ -9,7 +9,7 @@
 
 ## Getting Started
 
-Please follow the following steps to setup and run weather-informer
+Please follow the below steps to setup and run weather-informer
 
 ### Prerequisites
 
