@@ -3,6 +3,7 @@ package com.weather.informer.controller;
 import static com.weather.informer.constants.WeatherConstants.GET_WEATHER_INFO;
 
 import java.util.List;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,7 +28,7 @@ public class WeatherRestController {
 	}
 
 	@GetMapping(value = GET_WEATHER_INFO)
-	public ResponseEntity<List<WeatherDetails>> getWeatherInfoByCities(@PathVariable List<String> cities) {
+	public ResponseEntity<Set<WeatherDetails>> getWeatherInfoByCities(@PathVariable List<String> cities) {
 		LOG.info("Input City Names :: {}", cities);
 		return ResponseEntity.ok(openWeatherService.getWeatherInfoByCities(cities));
 	}

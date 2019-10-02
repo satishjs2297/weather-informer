@@ -1,7 +1,7 @@
 package com.weather.informer.controller;
 
 import java.util.Collections;
-import java.util.List;
+import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -30,8 +30,8 @@ public class WeatherRestControllerTest {
 	@Test
 	public void testGetWeatherInfoByCities() {
 		Mockito.when(openWeatherServiceMock.getWeatherInfoByCities(Mockito.anyList()))
-				.thenReturn(Collections.singletonList(new WeatherDetails()));
-		List<WeatherDetails> weathersByCities = weatherRestController.getWeatherInfoByCities(Collections.emptyList()).getBody();
+				.thenReturn(Collections.singleton(new WeatherDetails()));
+		Set<WeatherDetails> weathersByCities = weatherRestController.getWeatherInfoByCities(Collections.emptyList()).getBody();
 		Assert.assertNotNull(weathersByCities);
 	}
 

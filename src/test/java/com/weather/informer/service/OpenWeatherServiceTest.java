@@ -1,7 +1,7 @@
 package com.weather.informer.service;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -20,7 +20,7 @@ public class OpenWeatherServiceTest {
 
 	@Test
 	public void testgetWeatherForecastByCities() {
-		List<WeatherDetails> weatherInfoByCities = openWeatherService
+		Set<WeatherDetails> weatherInfoByCities = openWeatherService
 				.getWeatherInfoByCities(Arrays.asList("Chicago", "Houston", "Los Angeles"));
 		Assert.assertNotNull(weatherInfoByCities);
 		Assert.assertEquals(3, weatherInfoByCities.size());

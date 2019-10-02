@@ -1,64 +1,105 @@
-.weather-widgets {
-	margin: 20px auto;
+body {
+	font-family: "Trebuchet MS", sans-serif;
+}
+
+label {
+	font-weight: bold;
+}
+
+sup {
+	font-size: 3px;
+}
+
+#weather-banner {
+	background: #4266f5;
+	text-align: center;
+	color: white;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+#weather-form {
+	width: 500px;
+	margin: 0px auto;
+}
+
+.ui-widget {
+	margin-bottom: 10px;
+}
+
+.alert {
+	display: none;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+input[type=text] {
+	padding: 5px;
+	width: 250px;
+	border-radius: 3px;
+	border: 1px solid #c5c5c5;
+}
+
+.loading-results-alert {
+	margin-top: 10px;
+	text-align: center;
+	font-style: italic;
+}
+
+#weather-results {
+	overflow-wrap: break-word;
 }
 
 .weather-widget {
-	border: 1px #eee solid;
-	border-radius: 25px;
-	margin: 5px;
+	background: #4287f5;
+	color: white;
 	padding: 10px;
-	box-shadow: 5px 8px 8px #888888;
-	opacity: 0;
+	width: 200px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
-.weather-widget .city {
-	font-size: medium;
+.weather-widget table {
+	width: 100%;
+}
+
+.weather-widget .city-name {
 	font-weight: bold;
+	font-size: 20px;
+	text-transform: uppercase;
 	text-align: center;
 }
 
-.weather-widget .data-holder {
-	width: 130px;
+.weather-widget .temperature {
+	padding: 25px 0px;
+	text-align: center;
+	font-size: 20px;
+	width: 50%;
 }
 
-.weather-widget .primary-data-holder {
-	
-}
-
-.weather-widget .primary-data-holder .data {
-	
-}
-
-.weather-widget .primary-data-holder .data .temperature {
-	font-size: medium;
-	font-weight: bold;
-	padding: 0pt 3pt;
-	padding-left: 100px;
-	background-image: url('./weather-forecase.png');
+.weather-widget .weather-image {
+	background-image: url('images/weather.png');
 	background-repeat: no-repeat;
 	background-position: left center;
-	background-size: 100px;
+	background-size: 70px;
+	filter: invert(100%);
 }
 
-.weather-widget .clouds {
-	font-size: small;
-	text-align: center;
+.weather-widget .day {
+	font-size: 17px;
 }
 
-.weather-widget .humidity {
-	color: gray;
-	font-size: x-small;
-	text-align: center;
+.metric {
+	font-size: 12px;
 }
 
-.weather-widget .wind {
-	color: gray;
-	font-size: x-small;
-	text-align: center;
-}
-
-.weather-widget .pressure {
-	color: gray;
-	font-size: x-small;
-	text-align: center;
+.metric td {
+	padding: 2px;
 }

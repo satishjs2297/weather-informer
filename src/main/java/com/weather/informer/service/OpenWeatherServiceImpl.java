@@ -2,6 +2,7 @@ package com.weather.informer.service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
@@ -18,11 +19,11 @@ public class OpenWeatherServiceImpl implements OpenWeatherService {
 	private static final Logger LOG = LogManager.getLogger(OpenWeatherServiceImpl.class);
 
 	@Override
-	public List<WeatherDetails> getWeatherInfoByCities(List<String> cities) {
-		List<WeatherDetails> weathers = cities.parallelStream()
+	public Set<WeatherDetails> getWeatherInfoByCities(List<String> cities) {
+		Set<WeatherDetails> weathers = cities.parallelStream()
 						  				.map(this::getOpenWeatherInfoByCity)
 						  				.filter(Objects::nonNull)
-						  				.collect(Collectors.toList());
+						  				.collect(Collectors.toSet());
 		LOG.info("weathers :: {}", weathers);
 		return weathers;
 	}
