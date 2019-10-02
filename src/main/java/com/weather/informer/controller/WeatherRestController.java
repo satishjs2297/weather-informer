@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.weather.informer.model.WeatherDetails;
 import com.weather.informer.service.OpenWeatherService;
 
 @RestController
@@ -26,7 +27,7 @@ public class WeatherRestController {
 	}
 
 	@GetMapping(value = GET_WEATHER_INFO)
-	public ResponseEntity<List<String>> getWeatherInfoByCities(@PathVariable List<String> cities) {
+	public ResponseEntity<List<WeatherDetails>> getWeatherInfoByCities(@PathVariable List<String> cities) {
 		LOG.info("Input City Names :: {}", cities);
 		return ResponseEntity.ok(openWeatherService.getWeatherInfoByCities(cities));
 	}
