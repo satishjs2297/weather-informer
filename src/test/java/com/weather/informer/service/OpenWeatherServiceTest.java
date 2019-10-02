@@ -7,8 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.weather.informer.service.OpenWeatherService;
-import com.weather.informer.service.OpenWeatherServiceImpl;
+import com.weather.informer.model.WeatherDetails;
 
 public class OpenWeatherServiceTest {
 
@@ -21,7 +20,7 @@ public class OpenWeatherServiceTest {
 
 	@Test
 	public void testgetWeatherForecastByCities() {
-		List<String> weatherInfoByCities = openWeatherService
+		List<WeatherDetails> weatherInfoByCities = openWeatherService
 				.getWeatherInfoByCities(Arrays.asList("Chicago", "Houston", "Los Angeles"));
 		Assert.assertNotNull(weatherInfoByCities);
 		Assert.assertEquals(3, weatherInfoByCities.size());

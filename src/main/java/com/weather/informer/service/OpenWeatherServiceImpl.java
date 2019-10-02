@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 
 import com.weather.informer.constants.WeatherConstants;
+import com.weather.informer.model.WeatherDetails;
 import com.weather.informer.utils.RestTemplateUtil;
 
 @Service
@@ -17,8 +18,8 @@ public class OpenWeatherServiceImpl implements OpenWeatherService {
 	private static final Logger LOG = LogManager.getLogger(OpenWeatherServiceImpl.class);
 
 	@Override
-	public List<String> getWeatherInfoByCities(List<String> cities) {
-		List<String> weathers = cities.parallelStream()
+	public List<WeatherDetails> getWeatherInfoByCities(List<String> cities) {
+		List<WeatherDetails> weathers = cities.parallelStream()
 						  				.map(this::getOpenWeatherInfoByCity)
 						  				.filter(Objects::nonNull)
 						  				.collect(Collectors.toList());
@@ -26,10 +27,10 @@ public class OpenWeatherServiceImpl implements OpenWeatherService {
 		return weathers;
 	}
 
-	private String getOpenWeatherInfoByCity(String city) {
+	private WeatherDetails getOpenWeatherInfoByCity(String city) {
 		try {
 			String absolutWeatherUrl = WeatherConstants.OPEN_WEATHER_URL.concat(city);
-			return RestTemplateUtil.getInstance().getForObject(absolutWeatherUrl, String.class);
+			return RestTemplateUtil.getInstance().getForObject(absolutWeatherUrl, WeatherDetails.class);
 		} catch (RestClientException ex) {
 			LOG.error("Failed to get OpenWeather InfoBy City report:: {}", ex.getMessage());
 		}

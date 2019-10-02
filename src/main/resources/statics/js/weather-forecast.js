@@ -47,7 +47,7 @@ $(document).ready(function () {
         }
 
         function buildChildWidget(report) {
-        	var report = JSON.parse(report);
+        	//var report = JSON.parse(report);
             $report_widget = $("<div />").addClass("weather-widget").addClass("col-md-2");
             $city = $("<div />").addClass("city").text(report.name);
             $data_holder = $("<div />").addClass("data-holder");
