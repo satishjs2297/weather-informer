@@ -11,7 +11,7 @@ public class WeatherController {
 
 	@RequestMapping(value = "/")
 	public String landingPage() {
-		LOG.debug("homePage Begin...");
+		LOG.debug("landingPage Begin...");
 		return "weather-informer";
 	}
 
