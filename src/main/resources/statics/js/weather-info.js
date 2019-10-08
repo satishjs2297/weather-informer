@@ -28,13 +28,15 @@ $(document).ready(function() {
                 $(".no-results-alert").show();
             }
             $(".loading-results-alert").hide();
-        });
+        }).fail(function() {
+            alert('woops.. Something went wrong. Please Contact Application Support Team');
+        });;
     });
 
     function loadResults(results) {
         $(results).each(function(index,result) {
             $("#weather-results").append(createWidget(result));
-        });
+        });        
     }
 
 	function createWidget(report) {

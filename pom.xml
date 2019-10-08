@@ -21,8 +21,9 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>5.1.1.RELEASE</version>
+			<version>5.2.0.RELEASE</version>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -36,6 +37,12 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 		<!-- Http SSL Client -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -43,24 +50,19 @@
 			<version>4.5.9</version>
 		</dependency>
 
-		<!-- Log4j 2  -->
+		<!-- Log4j -->
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.12.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>2.12.1</version>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
 		</dependency>
 
 		<!-- lombok for POJO Construction -->
 		<dependency>
-		    <groupId>org.projectlombok</groupId>
-		    <artifactId>lombok</artifactId>
-		    <version>1.18.8</version>
-		    <scope>provided</scope>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.8</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Jackson binding -->
@@ -75,7 +77,6 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.9.3</version>
 		</dependency>
-
 
 		<!-- Unit Testing -->
 		<dependency>
@@ -93,24 +94,19 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>5.1.1.RELEASE</version>
+			<version>5.2.0.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
-
 
 	</dependencies>
 	<build>
 		<plugins>
-			<!-- Embedded Jetty HTTP Server for testing war application -->
 			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.4.8.v20171121</version>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
 				<configuration>
-					<scanIntervalSeconds>30</scanIntervalSeconds>
-					<webApp>
-						<contextPath>/weather</contextPath>
-					</webApp>
+					<path>/weather</path>
 				</configuration>
 			</plugin>
 		</plugins>

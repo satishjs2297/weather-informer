@@ -5,6 +5,8 @@ import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.function.Function;
 
 import javax.net.ssl.SSLContext;
 
@@ -31,6 +33,7 @@ public class RestTemplateUtil {
 			HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
 			requestFactory.setHttpClient(httpClient());
 			restTemplate = new RestTemplate(requestFactory);
+			restTemplate.setErrorHandler(new HttpErrorHandler());
 		}
 		return restTemplate;
 	}
@@ -44,5 +47,17 @@ public class RestTemplateUtil {
 		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e) {
 			throw new WeatherInformerException(e);
 		}
+	}
+
+	public static <T> Optional<T> getForObject(String url, Class<T> responseType) {
+		return Optional.of(request(t -> t.getForObject(url, responseType)));
+	}
+
+	public static <T> Optional<T> postForObject(String url, Object request, Class<T> responseType) {
+		return Optional.of(request(t -> t.postForObject(url, request, responseType)));
+	}
+
+	private static <R> R request(Function<RestTemplate, R> function) {
+		return function.apply(getInstance());
 	}
 }

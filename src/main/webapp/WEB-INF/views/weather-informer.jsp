@@ -39,7 +39,7 @@
                 <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
                     <p>
                         <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em; margin-top: .1em"></span>
-                        <strong>Invalid:</strong> Please enter comma separated city names.
+                        <strong>Invalid:</strong> Please enter valid comma separated city names.
                     </p>
                 </div>
             </div>
