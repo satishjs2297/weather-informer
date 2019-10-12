@@ -20,7 +20,7 @@ Please follow the below steps to setup and run weather-informer
 ```
 $ cd weather-informer
 $ mvn clean install 
-$ mvn jetty:run -e
+$ mvn tomcat7:run -e
 $ Open web browser & hit the url: http://localhost:8080/weather/?lang=en
 ```
 ## Development Setup
@@ -35,18 +35,15 @@ $ Open web browser & hit the url: http://localhost:8080/weather/?lang=en
 - Spring Web MVC
 - Jsp
 
-## Weather informer Sequence Flow
-
-![Weather Informer Flow](docs/weather-informer-squenceflow.png)
 
 ## Running the tests
 ```
 $ cd <path/to/weather-informer>
 $ mvn test -e
 ```
-## Authors
+## Developer(s)
 
-*  Swami
+*  Madhu
 
 ## Acknowledgments
 
