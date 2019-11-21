@@ -10,6 +10,6 @@ public interface WeatherConstants {
 	String GET_WEATHER_INFO = "/getWeatherInfoByCities/{cities}";
 
 	// Open weather url
-	String OPEN_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?APPID=c336a6e00dec3a709ef883ace1aa72ae&q=";
+	String OPEN_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?APPID=7bf825562208478a0ea322b942c87030&q=";
 
 }
